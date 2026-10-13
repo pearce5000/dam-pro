@@ -274,7 +274,7 @@ En esta primera tarea puedes suponer que se introducen **cantidades positivas y 
 1. Abre el proyecto Maven `tarea1`.
 2. En el panel **Project**, localiza `src/main/java`.
 3. Haz clic derecho sobre `java` (o sobre tu paquete) → **New → Java Class**.
-4. Escribe `Main` y comprueba que se crea `Main.java`.
+4. Escribe `Tickets` y comprueba que se crea `Main.java`.
 5. Incorpora el método `main`. Puedes comenzar con este esqueleto, **sin solución completa**:
 
 ```java
