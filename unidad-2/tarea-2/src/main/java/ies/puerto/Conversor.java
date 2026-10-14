@@ -10,10 +10,11 @@ import java.util.Scanner;
 public class Conversor {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        float resultado = 0;
+        double resultado = 0;
         float numeroKilometro = 0;
         float numeroMetro = 0;
         int opcion = 0;
+        int conversion = 0;
         System.out.println("==================");
         System.out.println("CONVERSOR DAM-PRO");
         System.out.println("==================");
@@ -34,18 +35,28 @@ public class Conversor {
                     numeroKilometro = teclado.nextFloat();
                     resultado = kilometroAMetro(numeroKilometro);
                     System.out.println(resultado+" metros");
+                    break;
                 case 2:
                     System.out.println("Introduzca el numero de metros");
                     numeroMetro = teclado.nextFloat();
                     resultado = metroACentimetro(numeroMetro);
                     System.out.println(resultado+" centimetros");
+                    break;
                 case 3:
-                    System.out.println("Introduzca el numero de metros");
+                    System.out.println("Introduzca el numero de kilómetros");
                     numeroMetro = teclado.nextFloat();
-                    resultado = metroACentimetro(numeroMetro);
+                    resultado = kilometrosAMillas(numeroKilometro);
                     System.out.println(resultado+" centimetros");
+                    break;
             }
+            conversion++;
         }
+        System.out.println("==================");
+        System.out.println("Usuario: "+nombre);
+        System.out.println("Conversiones realizadas: "+conversion);
+        System.out.println("Gracias por utilizar CONVERSOR DAM-PRO");
+        System.out.println("==================");
+
         // 1. Solicitar el nombre del usuario.
         // 2. Declarar opción y contador de conversiones.
         // 3. Crear el bucle while del menú.
@@ -58,17 +69,22 @@ public class Conversor {
 
     /**
      * Funcion para pasar kilometros a metros
-     * @param numeroKilometro float
-     * @return
+     * @param numeroKilometro float que registra el numero de kilómetros
+     * @return numero de metros
      */
     static float kilometroAMetro(float numeroKilometro) {return numeroKilometro*1000;}
 
     /**
      * Funcion para pasar metros a centimetros
-     * @param numeroMetro float
-     * @return
+     * @param numeroMetro float que registtra el numero de metros
+     * @return numero de metros
      */
     static float metroACentimetro(float numeroMetro) {return numeroMetro*100;}
 
-    static float kilometrosAMillas(float numeroKilometro) {return numeroKilometro * 0.621371;}
+    /**
+     * Funcion para pasar kilómetros a millas
+     * @param numeroKilometro float que registra el numero de kilómetros
+     * @return numero de millas
+     */
+    static double kilometrosAMillas(float numeroKilometro) {return numeroKilometro * 0.621371;}
 }
