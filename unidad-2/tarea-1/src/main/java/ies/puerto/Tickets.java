@@ -6,6 +6,7 @@ import java.util.Scanner;
  * @author pearce5000
  * @version 1.0.0
  */
+
 public class Tickets {
     static void main() {
         Scanner teclado = new Scanner(System.in);
