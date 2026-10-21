@@ -1,7 +1,5 @@
 package ies.puerto.es;
 
-import static java.lang.Boolean.parseBoolean;
-
 /**
  * @author Daniel Morales
  * @version 1.0.0
@@ -22,7 +20,7 @@ public class DatosPersonales {
         convertirEdad(sEdad);
         convertirAltura(sAltura);
         convertirMatricula(sMatricula);
-        convertirEdadEnvolvente(edad);
+        convertirEdadEnvolvente();
         esMayorDeEdad(edad);
         formatearFicha();
     }
@@ -83,11 +81,9 @@ public class DatosPersonales {
     /**
      * Funcion que transforma la edad en int a Integer
      * @param edad int que almacena la edad
-     * @return Integer que almacena la edad
      */
-    static Integer convertirEdadEnvolvente(int edad) {
-        edadObjeto = Integer.valueOf(edad);
-        return edadObjeto;
+    static void convertirEdadEnvolvente() {
+        edadObjeto = edad;
     }
 
     /**
@@ -95,7 +91,7 @@ public class DatosPersonales {
      * @param edadObjeto Integer que almacena la edad
      * @return Int que almacena la edad
      */
-    static int recuperarEdadPrimitiva(Integer edadObjeto) {
+    static int recuperarEdadPrimitiva(edadObjeto) {
         edadPrimitiva = edadObjeto.intValue();
         return edadPrimitiva;
     }
