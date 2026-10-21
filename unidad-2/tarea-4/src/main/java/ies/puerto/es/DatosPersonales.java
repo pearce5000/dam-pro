@@ -27,6 +27,11 @@ public class DatosPersonales {
         return Integer.parseInt(sEdad);
     }
 
+    /**
+     * Funcion que transforma la altura en String a double
+     * @param sAltura String que almacena la altura
+     * @return double de la altura
+     */
     static double convertirAltura(String sAltura) {
         if (sAltura == null) {
             return 0;
@@ -35,6 +40,11 @@ public class DatosPersonales {
         return Double.parseDouble(sAltura);
     }
 
+    /**
+     * Funcion que transforma la matricula en string a boolean
+     * @param sMatricula String que almacena si la matricula existe
+     * @return boolean que indica la existencia de la matricula
+     */
     static boolean convertirMatricula(String sMatricula) {
         if (sMatricula == null) {
             return false;
@@ -43,6 +53,11 @@ public class DatosPersonales {
         return matricula;
     }
 
+    /**
+     * Funcion que procesa la edad e indica si se es mayor de edad
+     * @param edad int que almacena la edad
+     * @return boolean que indica si se es mayor de edad
+     */
     static boolean esMayorDeEdad(int edad) {
         boolean mayor;
         if (edad < 18) {
@@ -52,15 +67,28 @@ public class DatosPersonales {
         return mayor;
     }
 
-
+    /**
+     * Funcion que transforma la edad en int a Integer
+     * @param edad int que almacena la edad
+     * @return Integer que almacena la edad
+     */
     static Integer convertirEdadEnvolvente(int edad) {
         Integer edadObjeto = Integer.valueOf(edad);
         return edadObjeto;
     }
 
-
+    /**
+     * Funcion que transforma la edad en Integer a int
+     * @param edadObjeto Integer que almacena la edad
+     * @return Int que almacena la edad
+     */
     static int recuperarEdadPrimitiva(Integer edadObjeto) {
         int edadPrimitiva = edadObjeto.intValue();
         return edadPrimitiva;
+    }
+
+
+    static String formatearFicha() {
+
     }
 }
