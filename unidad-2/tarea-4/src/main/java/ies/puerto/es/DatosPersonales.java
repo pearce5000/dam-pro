@@ -8,7 +8,10 @@ import static java.lang.Boolean.parseBoolean;
  */
 public class DatosPersonales {
     static void main() {
-
+        String nombre = "Ana";
+        String sEdad = "21";
+        String sAltura = "1.68";
+        String sMatricula = "true";
     }
 
     /**
@@ -50,5 +53,8 @@ public class DatosPersonales {
     }
 
 
-
+    static Integer convertirEdadEnvolvente(int edad) {
+        Integer edadObjeto = Integer.valueOf(edad);
+        return edadObjeto;
+    }
 }
