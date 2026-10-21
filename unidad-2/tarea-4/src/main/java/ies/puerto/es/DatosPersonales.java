@@ -1,5 +1,7 @@
 package ies.puerto.es;
 
+import static java.lang.Boolean.parseBoolean;
+
 /**
  * @author Daniel Morales
  * @version 1.0.0
@@ -30,6 +32,13 @@ public class DatosPersonales {
         return Double.parseDouble(sAltura);
     }
 
+    static boolean convertirMatricula(String sMatricula) {
+        if (sMatricula == null) {
+            return false;
+        }
+        boolean matricula = Boolean.parseBoolean(sMatricula);
+        return matricula;
+    }
 
     static boolean esMayorDeEdad(int edad) {
         boolean mayor;
@@ -39,4 +48,7 @@ public class DatosPersonales {
         mayor = true;
         return mayor;
     }
+
+
+
 }
