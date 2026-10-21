@@ -7,11 +7,24 @@ import static java.lang.Boolean.parseBoolean;
  * @version 1.0.0
  */
 public class DatosPersonales {
+    static String nombre;
+    static int edad;
+    static double altura;
+    static boolean matricula;
+    static Integer edadObjeto;
+    static int edadPrimitiva;
     static void main() {
-        String nombre = "Ana";
+        nombre = "Ana";
         String sEdad = "21";
         String sAltura = "1.68";
         String sMatricula = "true";
+        int edad = 0;
+        convertirEdad(sEdad);
+        convertirAltura(sAltura);
+        convertirMatricula(sMatricula);
+        convertirEdadEnvolvente(edad);
+        esMayorDeEdad(edad);
+        formatearFicha();
     }
 
     /**
@@ -23,7 +36,7 @@ public class DatosPersonales {
         if (sEdad == null) {
             return 0;
         }
-        int valor = Integer.valueOf(sEdad);
+        edad = Integer.valueOf(sEdad);
         return Integer.parseInt(sEdad);
     }
 
@@ -36,7 +49,7 @@ public class DatosPersonales {
         if (sAltura == null) {
             return 0;
         }
-        double valor = Double.valueOf(sAltura);
+        altura = Double.valueOf(sAltura);
         return Double.parseDouble(sAltura);
     }
 
@@ -49,7 +62,7 @@ public class DatosPersonales {
         if (sMatricula == null) {
             return false;
         }
-        boolean matricula = Boolean.parseBoolean(sMatricula);
+        matricula = Boolean.parseBoolean(sMatricula);
         return matricula;
     }
 
@@ -73,7 +86,7 @@ public class DatosPersonales {
      * @return Integer que almacena la edad
      */
     static Integer convertirEdadEnvolvente(int edad) {
-        Integer edadObjeto = Integer.valueOf(edad);
+        edadObjeto = Integer.valueOf(edad);
         return edadObjeto;
     }
 
@@ -83,12 +96,17 @@ public class DatosPersonales {
      * @return Int que almacena la edad
      */
     static int recuperarEdadPrimitiva(Integer edadObjeto) {
-        int edadPrimitiva = edadObjeto.intValue();
+        edadPrimitiva = edadObjeto.intValue();
         return edadPrimitiva;
     }
 
 
-    static String formatearFicha() {
-
+    static void formatearFicha() {
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Edad: "+edad);
+        System.out.println("Altura: "+altura);
+        System.out.println("Mayor de edad: "+matricula);
+        System.out.println("Edad como Integer: "+edadObjeto);
+        System.out.println("Edad como int: "+edadPrimitiva);
     }
 }
