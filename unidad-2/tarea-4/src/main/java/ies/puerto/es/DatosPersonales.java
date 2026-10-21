@@ -21,4 +21,13 @@ public class DatosPersonales {
         int valor = Integer.valueOf(sEdad);
         return Integer.parseInt(sEdad);
     }
+
+    static double convertirAltura(String sAltura) {
+        if (sAltura == null) {
+            return 0;
+        }
+        double valor = Double.valueOf(sAltura);
+        return Double.parseDouble(sAltura);
+    }
+
 }
