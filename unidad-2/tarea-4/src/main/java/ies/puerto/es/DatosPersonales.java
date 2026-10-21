@@ -57,4 +57,10 @@ public class DatosPersonales {
         Integer edadObjeto = Integer.valueOf(edad);
         return edadObjeto;
     }
+
+
+    static int recuperarEdadPrimitiva(Integer edadObjeto) {
+        int edadPrimitiva = edadObjeto.intValue();
+        return edadPrimitiva;
+    }
 }
