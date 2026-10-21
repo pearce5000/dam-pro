@@ -30,4 +30,13 @@ public class DatosPersonales {
         return Double.parseDouble(sAltura);
     }
 
+
+    static boolean esMayorDeEdad(int edad) {
+        boolean mayor;
+        if (edad < 18) {
+            mayor = false;
+        }
+        mayor = true;
+        return mayor;
+    }
 }
