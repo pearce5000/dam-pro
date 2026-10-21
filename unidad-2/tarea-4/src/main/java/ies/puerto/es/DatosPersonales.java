@@ -9,6 +9,7 @@ public class DatosPersonales {
     static int edad;
     static double altura;
     static boolean matricula;
+    static boolean mayorDeEdad;
     static Integer edadObjeto;
     static int edadPrimitiva;
     static void main() {
@@ -20,8 +21,9 @@ public class DatosPersonales {
         convertirEdad(sEdad);
         convertirAltura(sAltura);
         convertirMatricula(sMatricula);
-        convertirEdadEnvolvente();
         esMayorDeEdad(edad);
+        convertirEdadEnvolvente();
+        recuperarEdadPrimitiva();
         formatearFicha();
     }
 
@@ -70,12 +72,11 @@ public class DatosPersonales {
      * @return boolean que indica si se es mayor de edad
      */
     static boolean esMayorDeEdad(int edad) {
-        boolean mayor;
         if (edad < 18) {
-            mayor = false;
+            mayorDeEdad = false;
         }
-        mayor = true;
-        return mayor;
+        mayorDeEdad = true;
+        return mayorDeEdad;
     }
 
     /**
@@ -91,18 +92,27 @@ public class DatosPersonales {
      * @param edadObjeto Integer que almacena la edad
      * @return Int que almacena la edad
      */
-    static int recuperarEdadPrimitiva(edadObjeto) {
-        edadPrimitiva = edadObjeto.intValue();
-        return edadPrimitiva;
+    static void recuperarEdadPrimitiva() {
+        edadPrimitiva = edadObjeto;
     }
 
+    /**
+     * Funcion que muestra
+     */
+    static String formatearFicha() {
+        String ficha = "Nombre: " +nombre +
+                "Edad: "+edad +
 
-    static void formatearFicha() {
-        System.out.println("Nombre: "+nombre);
-        System.out.println("Edad: "+edad);
-        System.out.println("Altura: "+altura);
-        System.out.println("Mayor de edad: "+matricula);
-        System.out.println("Edad como Integer: "+edadObjeto);
-        System.out.println("Edad como int: "+edadPrimitiva);
+                "Altura: "+altura +
+
+                "Matricula: "+matricula +
+
+                "Mayor de edad: "+mayorDeEdad +
+
+                "Edad como Integer: "+edadObjeto +
+
+                "Edad como int: "+edadPrimitiva;
+        System.out.println(ficha);
+        return ficha;
     }
 }
