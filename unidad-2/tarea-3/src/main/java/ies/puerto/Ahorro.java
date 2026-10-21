@@ -49,7 +49,7 @@ public class Ahorro {
 
             System.out.println("Aportación registrada. Ahorro actual: "+ahorroActual+" euros");
             System.out.println("¿Desea hacer otra aportación? (S/N): ");
-            opcion = teclado.next();
+            opcion = teclado.nextLine();
 
         } while (opcion.equalsIgnoreCase("S"));
 

@@ -1,30 +1,32 @@
 package ies.puerto.es;
 
+import java.util.Scanner;
+
 /**
  * @author Daniel Morales
  * @version 1.0.0
  */
 public class DatosPersonales {
-    static String nombre;
-    static int edad;
-    static double altura;
-    static boolean matricula;
-    static boolean mayorDeEdad;
-    static Integer edadObjeto;
-    static int edadPrimitiva;
+
+
     static void main() {
-        nombre = "Ana";
-        String sEdad = "21";
-        String sAltura = "1.68";
-        String sMatricula = "true";
-        int edad = 0;
-        convertirEdad(sEdad);
-        convertirAltura(sAltura);
-        convertirMatricula(sMatricula);
-        esMayorDeEdad(edad);
-        convertirEdadEnvolvente();
-        recuperarEdadPrimitiva();
-        formatearFicha();
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce el nombre: ");
+        String sNombre = teclado.nextLine();
+        System.out.println("Introduce la edad: ");
+        String sEdad = teclado.nextLine();
+        System.out.println("Introduce la altura: ");
+        String sAltura = teclado.nextLine();
+        System.out.println("Introduce la matricula");
+        String sMatricula = teclado.nextLine();
+
+        int iEdad = convertirEdad(sEdad);
+        double dAltura = convertirAltura(sAltura);
+        boolean bMatricula = convertirMatricula(sMatricula);
+        boolean bMayorEdad = esMayorDeEdad(iEdad);
+        String ficha = formatearFicha(sNombre,iEdad,dAltura,bMatricula,bMayorEdad);
+
+        System.out.println(ficha);
     }
 
     /**
@@ -36,7 +38,6 @@ public class DatosPersonales {
         if (sEdad == null) {
             return 0;
         }
-        edad = Integer.valueOf(sEdad);
         return Integer.parseInt(sEdad);
     }
 
@@ -46,10 +47,9 @@ public class DatosPersonales {
      * @return double de la altura
      */
     static double convertirAltura(String sAltura) {
-        if (sAltura == null) {
+        if (sAltura == null || sAltura.isEmpty()) {
             return 0;
         }
-        altura = Double.valueOf(sAltura);
         return Double.parseDouble(sAltura);
     }
 
@@ -62,57 +62,53 @@ public class DatosPersonales {
         if (sMatricula == null) {
             return false;
         }
-        matricula = Boolean.parseBoolean(sMatricula);
-        return matricula;
+        return Boolean.parseBoolean(sMatricula);
     }
 
     /**
      * Funcion que procesa la edad e indica si se es mayor de edad
      * @param edad int que almacena la edad
-     * @return boolean que indica si se es mayor de edad
+     * @return true/false
      */
     static boolean esMayorDeEdad(int edad) {
         if (edad < 18) {
-            mayorDeEdad = false;
+            return false;
         }
-        mayorDeEdad = true;
-        return mayorDeEdad;
+        return true;
     }
 
     /**
      * Funcion que transforma la edad en int a Integer
-     * @param edad int que almacena la edad
+     * @param iEdad int que almacena la edad
      */
-    static void convertirEdadEnvolvente() {
-        edadObjeto = edad;
+    static Integer convertirEdadEnvolvente(int iEdad) {
+        return Integer.valueOf(iEdad);
     }
 
     /**
      * Funcion que transforma la edad en Integer a int
-     * @param edadObjeto Integer que almacena la edad
+     * @param iEdad Integer que almacena la edad
      * @return Int que almacena la edad
      */
-    static void recuperarEdadPrimitiva() {
-        edadPrimitiva = edadObjeto;
+    static int recuperarEdadPrimitiva(Integer iEdad) {
+        if (iEdad == null) {
+            return 0;
+        }
+        return iEdad.intValue();
     }
 
     /**
-     * Funcion que muestra
+     * Funcio que formatea la ficha
+     * @param sNombre String nombre de la ficha
+     * @param iEdad Integer edad de la ficha
+     * @param dAltura double altura de la ficha
+     * @param bMatricula boolean matricula de la ficha
+     * @param bMayorEdad boolean mayor de edad de la ficha
+     * @return
      */
-    static String formatearFicha() {
-        String ficha = "Nombre: " +nombre +
-                "Edad: "+edad +
-
-                "Altura: "+altura +
-
-                "Matricula: "+matricula +
-
-                "Mayor de edad: "+mayorDeEdad +
-
-                "Edad como Integer: "+edadObjeto +
-
-                "Edad como int: "+edadPrimitiva;
-        System.out.println(ficha);
-        return ficha;
+    static String formatearFicha(String sNombre, int iEdad, double dAltura
+                ,boolean bMatricula, boolean bMayorEdad) {
+        return "Ficha:"+sNombre+",edad:"+iEdad+",altura:"+dAltura
+                +",matricula:"+bMatricula+",mayor de edad:"+bMayorEdad;
     }
 }
