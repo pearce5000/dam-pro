@@ -33,9 +33,9 @@ public class GestorCalificaciones {
     }
 
     /**
-     *
-     * @param sNumero
-     * @return
+     * Función que convierte los numeros en String a enteros primitivos
+     * @param sNumero String que guarda el numero
+     * @return int
      */
     static int convertirNumeroNotas(String sNumero) {
         int numero = 0;
@@ -49,9 +49,9 @@ public class GestorCalificaciones {
     }
 
     /**
-     *
-     * @param sNumero
-     * @return
+     * Función que pasa los numeros guardados en String a double
+     * @param sNumero String que guarda el numero
+     * @return double que contiene el numero
      */
     static double convertirNota(String sNumero) {
         double numero = 0;
@@ -64,9 +64,9 @@ public class GestorCalificaciones {
     }
 
     /**
-     *
-     * @param dNumero
-     * @return
+     * Función que determina si un numero es válido o no
+     * @param dNumero double que guarda el numero
+     * @return boolean que muestra si el numero es válido o no
      */
     static boolean esNotaValida(Double dNumero) {
         if (dNumero == null) {
@@ -79,7 +79,7 @@ public class GestorCalificaciones {
     }
 
     /**
-     *
+     * Función que
      * @return
      */
     static Double solicitarNotaValida() {
@@ -97,18 +97,26 @@ public class GestorCalificaciones {
         return dNumero;
     }
 
-
-    static double calcularMedia(List<Double> dNotas) {
+    /**
+     * Función que calcula la media de la lista de notas
+     * @param lNotas List que guarda las diferentes notas
+     * @return double que guarda la media de las notas
+     */
+    static double calcularMedia(List<Double> lNotas) {
         double media = 0;
         double suma = 0;
-        for (int i = 0; i < dNotas.size(); i++) {
-            suma = suma + dNotas.get(i);
+        for (int i = 0; i < lNotas.size(); i++) {
+            suma = suma + lNotas.get(i);
         }
-        media = suma/dNotas.size();
+        media = suma/lNotas.size();
         return media;
     }
 
-
+    /**
+     * Función que recorre la lista y obtiene la nota máxima
+     * @param lNotas List que recoge las notas
+     * @return double que guarda la nota máxima de la lista
+     */
     static double obtenerMaxima(List<Double> lNotas) {
         double maximo = 0;
         for (int i = 0; i < lNotas.size(); i++) {
@@ -124,9 +132,9 @@ public class GestorCalificaciones {
 
 
     /**
-     *
-     * @param lNotas
-     * @return
+     * Función que recorre la lista y obtiene la nota mínima
+     * @param lNotas List que guarda las notas
+     * @return double que guarda la nota mínima de la lista
      */
     static double obtenerMinimo(List<Double> lNotas) {
         double minimo = 10;
