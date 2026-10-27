@@ -35,7 +35,7 @@ public class GestorCalificaciones {
     /**
      * Función que convierte los numeros en String a enteros primitivos
      * @param sNumero String que guarda el numero
-     * @return int
+     * @return int que guarda el numero
      */
     static int convertirNumeroNotas(String sNumero) {
         int numero = 0;
@@ -79,8 +79,8 @@ public class GestorCalificaciones {
     }
 
     /**
-     * Función que
-     * @return
+     * Función que procesa la nota introducida y comprueba que sea válida
+     * @return double que guarda el numero de la nota
      */
     static Double solicitarNotaValida() {
         Scanner teclado = new Scanner(System.in);
