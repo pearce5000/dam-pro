@@ -148,4 +148,39 @@ public class GestorCalificaciones {
         }
         return minimo;
     }
+
+    /**
+     * Funcion que cuenta la cantidad de notas aprobadas que hay en la lista
+     * @param lNotas List que guarda las notas
+     * @return int que guarda el numero de notas aprobadas
+     */
+    static int contarAprobados(List<Double> lNotas) {
+        int aprobados = 0;
+        for (int i = 0; i < lNotas.size(); i++) {
+            if (lNotas.get(i) >= 5) {
+                aprobados++;
+            }
+        }
+        return aprobados;
+    }
+
+    /**
+     * Funcion que cuenta la cantidad de notas suspendidas que hay en la lista
+     * @param lNotas List que guarda las notas
+     * @return int que guarda el numero de notas suspendidas
+     */
+    static int contarSuspensos(List<Double> lNotas) {
+        int suspensos = 0;
+        for (int i = 0; i < lNotas.size(); i++) {
+            if (lNotas.get(i) < 5) {
+                suspensos++;
+            }
+        }
+        return suspensos;
+    }
+
+
+    static String generarEstadisticas(List<Double> lNotas) {
+
+    }
 }
