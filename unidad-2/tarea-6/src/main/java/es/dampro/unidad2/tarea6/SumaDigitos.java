@@ -17,5 +17,8 @@ public final class SumaDigitos {
     public static int sumarDigitos(String numero) {
         // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
         throw new UnsupportedOperationException("Método pendiente de implementar: sumarDigitos");
+        if (numero == null || numero.isEmpty()) {
+            return 0;
+        }
     }
 }

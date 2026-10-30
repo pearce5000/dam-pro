@@ -15,6 +15,7 @@ public final class ContadorVocales {
         if (texto == null || texto.isEmpty()) {
             return 0;
         }
+        texto = texto.toLowerCase();
         int resultado = 0;
         for (int i = 0; i < texto.length(); i++) {
             char caracter = texto.charAt(i);

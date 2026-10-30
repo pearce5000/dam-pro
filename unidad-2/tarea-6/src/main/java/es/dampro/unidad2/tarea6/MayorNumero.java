@@ -16,7 +16,7 @@ public final class MayorNumero {
      */
     public static int obtenerMayor(String numeros) {
         // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        // throw new UnsupportedOperationException("Método pendiente de implementar: obtenerMayor");
+        throw new UnsupportedOperationException("Método pendiente de implementar: obtenerMayor");
 
         if (numeros == null || numeros.isEmpty()) {
             return 0;

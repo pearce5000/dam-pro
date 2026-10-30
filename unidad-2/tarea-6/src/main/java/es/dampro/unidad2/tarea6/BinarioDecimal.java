@@ -17,5 +17,8 @@ public final class BinarioDecimal {
     public static int convertirBinario(String binario) {
         // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
         throw new UnsupportedOperationException("Método pendiente de implementar: convertirBinario");
+        if (binario == null || binario.isEmpty()) {
+            return 0;
+        }
     }
 }

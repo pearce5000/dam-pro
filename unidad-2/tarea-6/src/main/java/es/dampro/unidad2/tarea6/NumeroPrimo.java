@@ -17,5 +17,9 @@ public final class NumeroPrimo {
     public static boolean esPrimo(String numero) {
         // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
         throw new UnsupportedOperationException("Método pendiente de implementar: esPrimo");
+        if (numero == null || numero.isEmpty()) {
+            return false;
+        }
+
     }
 }
