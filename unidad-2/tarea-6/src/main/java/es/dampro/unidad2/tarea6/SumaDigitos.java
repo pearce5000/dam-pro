@@ -16,9 +16,17 @@ public final class SumaDigitos {
      */
     public static int sumarDigitos(String numero) {
         // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        throw new UnsupportedOperationException("Método pendiente de implementar: sumarDigitos");
         if (numero == null || numero.isEmpty()) {
             return 0;
         }
+        int suma = 0;
+        for (int i = 0; i < numero.length(); i++) {
+            char cNumero = numero.charAt(i);
+            String sNumero = String.valueOf(cNumero);
+            int iNumero = Integer.parseInt(sNumero);
+            suma = suma + iNumero;
+        }
+        return suma;
+        // throw new UnsupportedOperationException("Método pendiente de implementar: sumarDigitos");
     }
 }

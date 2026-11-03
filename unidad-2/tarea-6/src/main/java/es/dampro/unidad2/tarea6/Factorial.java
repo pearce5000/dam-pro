@@ -16,9 +16,8 @@ public final class Factorial {
      */
     public static int calcularFactorial(String numero) {
         // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        // throw new UnsupportedOperationException("Método pendiente de implementar: calcularFactorial");
 
-        int iNumero = Integer.
+        int iNumero = Integer.parseInt(numero);
         if (iNumero <= 1) {
             return 1;
         }
@@ -26,5 +25,7 @@ public final class Factorial {
         for (int i = 2; i <= iNumero ; i++) {
             resultado = resultado * i;
         }
-        return resultado;    }
+        return resultado;
+        // throw new UnsupportedOperationException("Método pendiente de implementar: calcularFactorial");
+    }
 }

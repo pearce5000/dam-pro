@@ -16,7 +16,6 @@ public final class Palindromo {
      */
     public static boolean esPalindromo(String texto) {
         // TODO: implementa el algoritmo sin sustituirlo por una función que lo resuelva directamente.
-        // throw new UnsupportedOperationException("Método pendiente de implementar: esPalindromo");
 
         if (texto == null || texto.isEmpty()) {
             return false;
@@ -33,5 +32,6 @@ public final class Palindromo {
             }
         }
         return true;
+        // throw new UnsupportedOperationException("Método pendiente de implementar: esPalindromo");
     }
 }
