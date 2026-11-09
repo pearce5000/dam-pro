@@ -23,7 +23,8 @@ public final class ComprobadorReservas {
      * @return
      */
     public static boolean haySolapamiento(LocalDateTime inicio1, LocalDateTime fin1, LocalDateTime inicio2, LocalDateTime fin2) {
-        // TODO: Implementa el algoritmo según el enunciado.
+
+
         return false;
     }
 }

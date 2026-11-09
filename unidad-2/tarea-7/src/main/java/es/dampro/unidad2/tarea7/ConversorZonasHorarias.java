@@ -5,23 +5,34 @@ import java.time.format.*;
 import java.time.temporal.ChronoUnit;
 
 /**
- * TODO: Describe la finalidad de ConversorZonasHorarias.
+ * Cambia la zona horaria de la fecha de origen a otra zona horaria
  *
- * @author
- * @version
+ * @author Daniel Morales
+ * @version 1.0.0
  */
 public final class ConversorZonasHorarias {
     private ConversorZonasHorarias() { }
 
+    public static void main(String[] args) {
+        ZonedDateTime fechaOrigen = ZonedDateTime.now();
+        ZoneId zonaDestino = ZoneId.of("America/New_York");
+        ZonedDateTime fechaDestino = convertirZona(fechaOrigen, zonaDestino);
+        System.out.println(fechaOrigen);
+        System.out.println(fechaDestino);
+    }
+
     /**
-     * TODO: Describe lo que hace el método.
+     * Cambia la zona horaria de la fecha de origen a la zona fijada
      *
-     * @param fechaOrigen
-     * @param zonaDestino
+     * @param fechaOrigen ZonedDateTime Fecha de origen
+     * @param zonaDestino ZoneId Zona a la que se va a convertir la fecha
      * @return
      */
     public static ZonedDateTime convertirZona(ZonedDateTime fechaOrigen, ZoneId zonaDestino) {
-        // TODO: Implementa el algoritmo según el enunciado.
-        return fechaOrigen;
+        if (fechaOrigen == null) {
+            fechaOrigen = ZonedDateTime.now();
+        }
+        ZonedDateTime fechaDestino = fechaOrigen.withZoneSameInstant(zonaDestino);
+        return fechaDestino;
     }
 }
