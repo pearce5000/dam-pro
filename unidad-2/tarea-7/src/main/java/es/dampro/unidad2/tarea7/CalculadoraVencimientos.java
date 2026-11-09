@@ -24,8 +24,9 @@ public final class CalculadoraVencimientos {
         System.out.println("Introduzca los dias: ");
         int dias = teclado.nextInt();
 
-        LocalDate vencimiento = calcularVencimiento(fechaActual,anios,meses,dias);
-        System.out.println(vencimiento);
+        LocalDate vencimiento = calcularVencimiento(fechaActual,dias,meses,anios);
+        System.out.println("Fecha actual: "+fechaActual);
+        System.out.println("Vencimiento: "+vencimiento);
     }
 
     /**
@@ -42,8 +43,8 @@ public final class CalculadoraVencimientos {
             fecha = LocalDate.now();
         }
         LocalDate vencimiento = fecha.plusYears(anios);
-        vencimiento = fecha.plusMonths(meses);
-        vencimiento = fecha.plusDays(dias);
+        vencimiento = vencimiento.plusMonths(meses);
+        vencimiento = vencimiento.plusDays(dias);
 
         return vencimiento;
     }
