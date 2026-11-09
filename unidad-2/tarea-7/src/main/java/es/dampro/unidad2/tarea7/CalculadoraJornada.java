@@ -6,7 +6,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 /**
- * TODO: Describe la finalidad de CalculadoraJornada.
+ * Calcula el tiempo total que se ha trabajado en un dia
  *
  * @author
  * @version
@@ -25,12 +25,12 @@ public final class CalculadoraJornada {
     }
 
     /**
-     * TODO: Describe lo que hace el método.
+     * Calcula el tiempo de la jornada del dia descontando el descanso
      *
-     * @param entrada
-     * @param salida
-     * @param descansoMinutos
-     * @return
+     * @param entrada LocalTime Hora de entrada
+     * @param salida LocalTime Hora de salida
+     * @param descansoMinutos int Cantidad de minutos de descanso
+     * @return Duration Tiempo total de trabajo
      */
     public static Duration calcularTiempoTrabajado(LocalTime entrada, LocalTime salida, int descansoMinutos) {
         if (entrada == null || salida == null) {

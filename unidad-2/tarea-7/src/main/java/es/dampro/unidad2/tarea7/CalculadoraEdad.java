@@ -5,7 +5,7 @@ import java.time.format.*;
 import java.time.temporal.ChronoUnit;
 
 /**
- * TODO: Describe la finalidad de CalculadoraEdad.
+ * Realiza el calculo de una edad
  *
  * @author Daniel Morales
  * @version 1.0.0
