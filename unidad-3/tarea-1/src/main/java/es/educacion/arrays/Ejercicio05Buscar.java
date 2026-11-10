@@ -1,13 +1,36 @@
 package es.educacion.arrays;
 
-// Devuelve el índice de la primera aparición o -1. No requiere ordenar. Null: IllegalArgumentException.
-// 
-// TODO: implementar el método y documentar la clase y el método mediante Javadoc.
+/**
+ * Muestra la posicion de un numero especifico en una lista
+ * @author Daniel Morales
+ * @version 1.0.0
+ */
 public final class Ejercicio05Buscar {
     private Ejercicio05Buscar() { }
 
-    // Devuelve el índice de la primera aparición o -1. No requiere ordenar. Null: IllegalArgumentException.
+    public static void main(String[] args) {
+        int[] numeros = {1,5,7,9,10};
+        int objetivo = 9;
+        int posicion = buscar(numeros, objetivo);
+        System.out.println("La posicion del numero es: "+posicion);
+    }
+
+    /**
+     * Encuentra la posicion de un numero especifico en una lista
+     * @param numeros int[] lista de numeros
+     * @param objetivo int numero a buscar
+     * @return int posicion del numero
+     */
     public static int buscar(int[] numeros, int objetivo) {
-        throw new UnsupportedOperationException("Pendiente de implementar");
+        if (numeros == null || numeros.length == 0) {
+            return -1;
+        }
+        for (int i = 0; i < numeros.length; i++) {
+            int numero = numeros[i];
+            if (numero == objetivo) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
