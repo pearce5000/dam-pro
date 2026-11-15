@@ -7,6 +7,18 @@ public final class Ejercicio13Frecuencia {
 
     // Contrato: Devuelve cuántas veces aparece un valor. Se admiten negativos y ceros. Null: IllegalArgumentException.
     public static int frecuencia(int[] numeros, int objetivo) {
-        throw new UnsupportedOperationException("Pendiente de implementar");
+        if (numeros == null) {
+            throw new IllegalArgumentException();
+        }
+        if (numeros.length == 0) {
+            return 0;
+        }
+        int repeticiones = 0;
+        for (int numero : numeros) {
+            if (numero == objetivo) {
+                repeticiones++;
+            }
+        }
+        return repeticiones;
     }
 }
