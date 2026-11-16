@@ -18,12 +18,21 @@ public final class Ejercicio09EliminarDuplicados {
         if (numeros.length == 0) {
             return new int[]{};
         }
-
-        int[] resultado = new int[0];
-        for (int i = 0; i < numeros.length; i++) {
-            int numero = numeros[i];
-
+        int cantidad = 0;
+        int[] resultado = new int[numeros.length];
+        for (int numero : numeros) {
+            boolean repetido = false;
+            for (int i = 0; i < cantidad; i++) {
+                if (numero == resultado[i]) {
+                    repetido = true;
+                    break;
+                }
+            }
+            if (!repetido) {
+                resultado[cantidad] = numero;
+                cantidad++;
+            }
         }
-        return resultado;
+        return Arrays.copyOf(resultado,cantidad);
     }
 }
